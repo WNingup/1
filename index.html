@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>植物对话器</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <script type="importmap">
+    {
+      "imports": {
+        "@google/genai": "https://esm.sh/@google/genai@^0.14.0"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="app-container">
+    <main id="chat-container">
+      <div id="chat-history">
+        <div class="message npc-message">
+          <p>轻触植物，试着与另一个世界建立连接...</p>
+        </div>
+      </div>
+      <div id="signal-animation-container"></div>
+      <form id="chat-form">
+        <input type="text" id="chat-input" placeholder="试着说些什么..." autocomplete="off" required>
+        <button type="submit" aria-label="发送消息">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </form>
+    </main>
+    <aside id="npc-portrait-container">
+      <div id="portrait-placeholder">
+        <h2>绿意彼端</h2>
+        <p>你连接到的人将会在此显现。</p>
+      </div>
+       <div id="portrait-loader" class="hidden">
+        <div class="spinner"></div>
+        <p>正在描绘彼端的样貌...</p>
+      </div>
+      <img id="npc-image" class="hidden" alt="与你对话之人的画像">
+    </aside>
+  </div>
+  <script type="module" src="index.tsx"></script>
+</body>
+</html>
